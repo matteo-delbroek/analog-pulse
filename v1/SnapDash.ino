@@ -11,12 +11,29 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 void setup() {
   Serial.begin(115200);
-  pinMode(9, OUTPUT);
+  int ledPin = 9;
+  pinMode(ledPin, OUTPUT);
 
   // Start het OLED-scherm
   if (!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
     Serial.println("No OLED found check the cables");
     while (true);
+    digitalWrite(ledPin, HIGH);
+    delay(700);
+    digitalWrite(ledPin, LOW);
+    delay(700);
+    digitalWrite(ledPin, HIGH);
+    delay(700);
+    digitalWrite(ledPin, LOW);
+    delay(700);
+    digitalWrite(ledPin, HIGH);
+    delay(700);
+    digitalWrite(ledPin, LOW);
+    delay(700);
+    digitalWrite(ledPin, HIGH);
+    delay(700);
+    digitalWrite(ledPin, LOW);
+    delay(700);
   }
 
   display.clearDisplay();
